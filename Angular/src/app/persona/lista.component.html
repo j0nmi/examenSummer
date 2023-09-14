@@ -1,0 +1,14 @@
+<div class="person-list">
+    <h2>Lista de Personas</h2>
+    <ul class="person-list__items">
+      <li *ngFor="let persona of listapersonas" class="person-list__item">
+        <div class="person-list__info">
+          <p class="person-list__name">{{ persona.nombre }}</p>
+          <p class="person-list__birthdate">{{ persona.fechaNacimiento }}</p>
+          <p class="person-list__phone">{{ persona.telefono }}</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+  
+  

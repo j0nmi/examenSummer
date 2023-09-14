@@ -1,0 +1,31 @@
+<form [formGroup]="formulario" (ngSubmit)="rellenarRegistro(formulario)" class="form-container" novalidate>
+    <h1 class="form-title">Registro nuevo usuario</h1>
+  
+    <div class="form-group">
+      <label for="nombre" class="form-label">Nombre:</label>
+      <input formControlName="nombre" type="text" class="form-input" name="nombre" placeholder="Nombre" required maxlength="20">
+      <div class="error-message" *ngIf="formulario.get('nombre')?.errors && formulario.get('nombre')?.dirty">
+        <small>Campo requerido</small>
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="fechaNacimiento" class="form-label">Fecha de nacimiento:</label>
+      <input formControlName="fechaNacimiento" type="date" class="form-input" name="fechaNacimiento" required style="color: black">
+      <div class="error-message" *ngIf="formulario.get('fechaNacimiento')?.errors && formulario.get('fechaNacimiento')?.dirty">
+        <small>Campo requerido</small>
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="telefono" class="form-label">Teléfono:</label>
+      <input formControlName="telefono" type="text" class="form-input" name="telefono" placeholder="Teléfono" required maxlength="20">
+      <div class="error-message" *ngIf="formulario.get('telefono')?.errors && formulario.get('telefono')?.dirty">
+        <small>Campo requerido</small>
+      </div>
+    </div>
+  
+    <button class="submit-button" type="submit" [disabled]="formulario.invalid">Registrarse</button>
+  </form>
+  
+  
